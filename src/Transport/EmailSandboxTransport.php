@@ -23,13 +23,14 @@ class EmailSandboxTransport extends AbstractTransport
         $storagePath = config('email-sandbox.storage_path');
 
         if (!is_dir($storagePath)) {
-            mkdir($storagePath, 0755, true);
+            // Suppress the warning on the race where a concurrent send created it first.
+            @mkdir($storagePath, 0755, true);
         }
 
         $attachments = [];
 
         foreach ($email->getAttachments() as $attachment) {
-            $filename = Str::random(10).'_'.$attachment->getFilename();
+            $filename = Str::random(10).'_'.($attachment->getFilename() ?: 'attachment');
             $path = $storagePath.'/'.$filename;
             $body = $attachment->getBody();
 

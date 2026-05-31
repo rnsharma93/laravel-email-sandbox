@@ -1,5 +1,5 @@
 {
-    "name": "ram/laravel-email-sandbox",
+    "name": "rnsharma93/laravel-email-sandbox",
     "description": "Production-ready self-hosted email testing driver for Laravel with attachment preview and secure dashboard.",
     "type": "library",
     "license": "MIT",
@@ -22,7 +22,10 @@
     },
     "require": {
         "php": ">=8.1",
-        "illuminate/support": "^10.0|^11.0|^12.0"
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/mail": "^10.0|^11.0|^12.0",
+        "symfony/mailer": "^6.2|^7.0",
+        "symfony/mime": "^6.2|^7.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

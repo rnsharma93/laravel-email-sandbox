@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->json('headers')->nullable();
             $table->json('attachments')->nullable();
             $table->timestamps();
+
+            $table->index('created_at');
         });
     }
     public function down(): void

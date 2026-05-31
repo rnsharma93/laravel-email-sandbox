@@ -8,8 +8,9 @@
 
         $formatAddress = function ($arr) {
             return collect($arr)->map(function ($item) {
-                $name = $item['name'] ?? '';
-                $address = $item['address'] ?? '';
+                // Escape header-derived values to prevent stored XSS in the dashboard.
+                $name = e($item['name'] ?? '');
+                $address = e($item['address'] ?? '');
                 $formatted = trim($name) ? "{$name} &lt;{$address}&gt;" : $address;
                 return "<span class='inline-block px-2 py-0.5 bg-gray-100 rounded-md text-gray-800 border border-gray-200'>{$formatted}</span>";
             })->join(' ');
@@ -211,7 +212,8 @@
                         class="h-full w-full absolute inset-0 bg-gray-200/50 flex justify-center overflow-auto items-start">
                         <div :class="{'w-full h-full': device=='desktop', 'w-[768px] h-[1024px] mt-8 shadow-xl border border-gray-300 rounded-sm shrink-0': device=='tablet', 'w-[375px] h-[812px] mt-8 shadow-xl border border-gray-300 rounded-sm shrink-0': device=='mobile'}"
                             class="bg-white transition-all duration-300 ease-in-out relative origin-top mx-auto">
-                            <iframe srcdoc="{{ $email->html_body }}" class="w-full h-full border-0 absolute inset-0"></iframe>
+                            <iframe srcdoc="{{ $email->html_body }}" sandbox="allow-same-origin"
+                                class="w-full h-full border-0 absolute inset-0"></iframe>
                         </div>
                     </div>
 

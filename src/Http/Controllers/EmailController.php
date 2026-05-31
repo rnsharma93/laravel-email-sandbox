@@ -43,7 +43,12 @@ class EmailController extends Controller
         }
 
         $path = config('email-sandbox.storage_path').'/'.$file;
-        return response()->download($path);
+        abort_unless(is_file($path), 404);
+
+        // Strip the random prefix added at capture time for a clean download name.
+        $original = preg_replace('/^[a-zA-Z0-9]+_/', '', $file);
+
+        return response()->download($path, $original);
     }
 
     public function destroy($id)
@@ -54,14 +59,13 @@ class EmailController extends Controller
 
     public function destroyAll()
     {
-        EmailMessage::truncate();
-        
-        $files = glob(config('email-sandbox.storage_path').'/*.eml');
-        foreach($files as $file) {
-            if(is_file($file)) {
-                unlink($file);
+        // Chunk-delete so the model's "deleting" event fires for each record
+        // and the associated .eml / attachment files are cleaned up.
+        EmailMessage::query()->chunkById(200, function ($emails) {
+            foreach ($emails as $email) {
+                $email->delete();
             }
-        }
+        });
 
         return redirect()->route('email-sandbox.index');
     }
