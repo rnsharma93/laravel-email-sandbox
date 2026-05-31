@@ -4,6 +4,13 @@
   A beautiful, self-hosted email testing driver &amp; dashboard for Laravel — ideal for staging environments.
 </p>
 
+<p align="center">
+  <a href="https://packagist.org/packages/rnsharma93/laravel-email-sandbox"><img src="https://img.shields.io/packagist/v/rnsharma93/laravel-email-sandbox.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+  <a href="https://packagist.org/packages/rnsharma93/laravel-email-sandbox"><img src="https://img.shields.io/packagist/dt/rnsharma93/laravel-email-sandbox.svg?style=flat-square" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/rnsharma93/laravel-email-sandbox"><img src="https://img.shields.io/packagist/php-v/rnsharma93/laravel-email-sandbox.svg?style=flat-square" alt="PHP Version"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/packagist/l/rnsharma93/laravel-email-sandbox.svg?style=flat-square" alt="License"></a>
+</p>
+
 ---
 
 Laravel Email Sandbox allows you to easily intercept, capture, and preview outgoing emails inside your application without sending real emails to your users. It comes with a stunning, highly responsive dashboard deeply inspired by Mailpit—built natively for Laravel with zero NPM dependencies.
@@ -18,6 +25,7 @@ Instead of paying for a hosted inbox (like Mailtrap) or installing extra softwar
 ## 📑 Table of Contents
 
 - [Key Features](#-key-features)
+- [Screenshots](#-screenshots)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Access Control & Security](#-access-control--security)
@@ -36,6 +44,22 @@ Instead of paying for a hosted inbox (like Mailtrap) or installing extra softwar
 - **Attachment Support:** Safely capture, list, and download all email attachments natively.
 - **Mass Deletion:** Keep your database clean with "Delete All" functionality.
 - **Secure by Default:** Uses Laravel auth & Gates to ensure only authorized admins can access the dashboard outside of `local`.
+
+---
+
+## 📸 Screenshots
+
+> Replace these placeholders with real screenshots. Drop your images in a `docs/` folder at the package root and update the paths below.
+
+<p align="center">
+  <strong>Inbox</strong><br>
+  <img src="docs/inbox.png" alt="Email Sandbox inbox" width="800">
+</p>
+
+<p align="center">
+  <strong>Email Preview (HTML / Text / Headers / Raw)</strong><br>
+  <img src="docs/email-preview.png" alt="Email preview with HTML, text, headers and raw views" width="800">
+</p>
 
 ---
 

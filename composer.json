@@ -1,11 +1,31 @@
 {
     "name": "rnsharma93/laravel-email-sandbox",
-    "description": "Production-ready self-hosted email testing driver for Laravel with attachment preview and secure dashboard.",
+    "description": "Self-hosted email testing driver & dashboard for Laravel — capture and preview outgoing emails on staging without sending real mail.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "email",
+        "mail",
+        "mailer",
+        "sandbox",
+        "testing",
+        "staging",
+        "mailpit",
+        "mailtrap",
+        "email-preview",
+        "mail-driver"
+    ],
+    "homepage": "https://github.com/rnsharma93/laravel-email-sandbox",
+    "support": {
+        "issues": "https://github.com/rnsharma93/laravel-email-sandbox/issues",
+        "source": "https://github.com/rnsharma93/laravel-email-sandbox"
+    },
     "authors": [
         {
-            "name": "Ram Sharma"
+            "name": "Ram Sharma",
+            "email": "rns6393@gmail.com",
+            "role": "Developer"
         }
     ],
     "autoload": {
