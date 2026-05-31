@@ -49,7 +49,6 @@ Instead of paying for a hosted inbox (like Mailtrap) or installing extra softwar
 
 ## 📸 Screenshots
 
-> Replace these placeholders with real screenshots. Drop your images in a `docs/` folder at the package root and update the paths below.
 
 <p align="center">
   <strong>Inbox</strong><br>
